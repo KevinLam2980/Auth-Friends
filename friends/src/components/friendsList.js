@@ -7,7 +7,8 @@ const FriendList = props => {
         <div>
             {
                 friends.length > 0 ? friends.map(friend => {
-                return (<div>
+                return (
+                <div key={friend.id}>
                     <h3>{friend.name}</h3>
                     <p>{friend.age}</p>
                     <p>{friend.email}</p>

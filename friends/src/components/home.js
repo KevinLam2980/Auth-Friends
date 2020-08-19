@@ -32,10 +32,8 @@ const Home = () => {
     const addFriend = (evt) => {
         evt.preventDefault()
         axiosWithAuth()
-        // .post('api/friends', {...form, id: friends.length + 1})
         .post('api/friends', form)
         .then(res => {
-            console.log('add friend')
             setFriends(res.data)
             setForm(initialFormValues)
         })
@@ -58,12 +56,9 @@ const Home = () => {
 
     const edit = (evt) => {
         evt.preventDefault()
-        console.log(form)
         axiosWithAuth()
         .put(`api/friends/${form.id}`, form)
         .then(res => {
-            console.log('edit friend')
-            console.log(res)
             setFriends(res.data)
             setForm(initialFormValues)
             setEditing(false)
@@ -86,7 +81,7 @@ const Home = () => {
 
     return (
         <div>
-           <AddFriend form={form} handleChanges={handleChanges} addFriend={addFriend} editing={editing} edit={edit}/>
+            <AddFriend form={form} handleChanges={handleChanges} addFriend={addFriend} editing={editing} edit={edit}/>
             <FriendList friends={friends} removeFriend={removeFriend} editFriend={editFriend} />
         </div>
     )

@@ -13,7 +13,6 @@ const Login = () => {
     const onHandleChanges = evt => {
         setCredentials({...credentials, [evt.target.name]: evt.target.value })
     }
-
     const login = evt => {
         evt.preventDefault()
         axiosWithAuth()
@@ -27,7 +26,6 @@ const Login = () => {
             console.log(err)
         })
     }
-
     return (
         <div>
             <form onSubmit={login}>

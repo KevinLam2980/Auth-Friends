@@ -2,7 +2,6 @@ import React from 'react'
 
 const AddFriend = props => {
 const { form, handleChanges, addFriend, editing, edit } = props
-console.log(props)
     return(
         <form onSubmit={(evt) => {
                 editing ? edit(evt) : addFriend(evt)
